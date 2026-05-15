@@ -1,0 +1,287 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:#0f0f0f;
+  color:rgb(255, 255, 255);
+  line-height:1.6;
+}
+
+/* Navbar */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 10%;
+  background:#000000;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+.logo{
+  color:#ffffff;
+  font-size:28px;
+}
+
+.nav-links{
+  display:flex;
+  list-style:none;
+}
+
+.nav-links li{
+  margin-left:20px;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:white;
+  transition:0.3s;
+}
+
+.nav-links a:hover,
+.nav-links .active{
+  color:#00c3ff;
+}
+
+#menu-btn{
+  display:none;
+  background:none;
+  border:none;
+  color:white;
+  font-size:28px;
+  cursor:pointer;
+}
+
+/* Home Section */
+.hero{
+  height:90vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+
+  background:
+    linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+    url("https://t4.ftcdn.net/jpg/06/18/14/43/240_F_618144393_oAys6JEuxUcAOr5nbqkZ15sirOWrRiQi.jpg  ");
+
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+}
+
+.hero-content h2{
+  font-size:55px;
+  margin-bottom:20px;
+}
+
+.hero-content p{
+  max-width:700px;
+  margin:auto;
+  margin-bottom:20px;
+}
+
+.btn{
+  display:inline-block;
+  padding:12px 25px;
+  background:#00c3ff;
+  color:white;
+  text-decoration:none;
+  border-radius:5px;
+  transition:0.3s;
+}
+
+.btn:hover{
+  background:#0099cc;
+  transform:scale(1.05);
+}
+
+/* About Section */
+.about-section{
+  padding:80px 10%;
+  text-align:center;
+
+  background:
+    linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+    url("about-bg.jpg");
+
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+}
+
+.about-section h2{
+  font-size:45px;
+  margin-bottom:20px;
+}
+
+.about-section p{
+  max-width:800px;
+  margin:auto;
+}
+
+/* Features */
+.features{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+  padding:60px 10%;
+}
+
+.card{
+  background:#1a1a1a;
+  padding:30px;
+  border-radius:10px;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+  background:#222;
+}
+
+/* Gallery Section */
+.gallery-section{
+  padding:80px 10%;
+
+  background:
+    linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+    url("gallery-bg.jpg");
+
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+}
+
+.gallery-section h2{
+  text-align:center;
+  font-size:45px;
+  margin-bottom:40px;
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.gallery-box{
+  height:220px;
+  background:#222;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:24px;
+  border-radius:10px;
+  transition:0.3s;
+}
+
+.gallery-box:hover{
+  background:#00c3ff;
+  transform:scale(1.03);
+}
+
+/* Contact Section */
+.contact-section{
+  padding:80px 10%;
+  display:flex;
+  justify-content:center;
+
+  background:
+    linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
+    url("contact-bg.jpg");
+
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+}
+
+form{
+  width:100%;
+  max-width:600px;
+  display:flex;
+  flex-direction:column;
+}
+
+input,
+textarea{
+  padding:15px;
+  margin-bottom:20px;
+  border:none;
+  border-radius:5px;
+  background:#1f1f1f;
+  color:white;
+}
+
+input:focus,
+textarea:focus{
+  outline:none;
+  border:1px solid #00c3ff;
+}
+
+textarea{
+  height:150px;
+}
+
+button{
+  border:none;
+  cursor:pointer;
+}
+
+/* Footer */
+footer{
+  text-align:center;
+  padding:20px;
+  background:#111;
+  margin-top:30px;
+}
+
+/* Responsive */
+@media(max-width:768px){
+
+  #menu-btn{
+    display:block;
+  }
+
+  .nav-links{
+    position:absolute;
+    top:70px;
+    right:0;
+    background:#111;
+    width:200px;
+    flex-direction:column;
+    padding:20px;
+
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(-10px);
+    transition:0.3s;
+  }
+
+  .nav-links.show{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+  }
+
+  .nav-links li{
+    margin:15px 0;
+  }
+
+  .hero-content h2{
+    font-size:38px;
+  }
+
+  .about-section h2,
+  .gallery-section h2{
+    font-size:35px;
+  }
+}
